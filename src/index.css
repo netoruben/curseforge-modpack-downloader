@@ -1,0 +1,320 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  margin: auto;
+  max-width: 38rem;
+  background-color: rgb(75, 76, 79);
+  overflow: hidden;
+}
+
+nav {
+  height: 25px;
+  background-color: rgb(43, 44, 46);
+}
+
+.navButtons {
+  float: right;
+  height: 100%;
+  font-size: 0;
+}
+
+button, label {
+  border: 0;
+  background: transparent;
+  height: 100%;
+  margin: 0;
+  padding: 5px;
+  padding-top: 3px;
+  cursor: pointer;
+  color: white;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  letter-spacing: 0.1em;
+}
+
+#settings {
+  position: absolute;
+  width: calc(100% - 40px);
+  height: calc(100% - 25px - 40px);
+  padding: 20px;
+  background: rgb(43, 44, 46, 0.5);
+  display: none;
+}
+
+.settings-modal {
+  position: relative;
+  background-color: rgb(43, 44, 46);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.settings-modal label {
+  padding: 0;
+}
+
+.modpack-location {
+  background-color: rgb(75, 76, 79);
+  border-radius: 3px;
+  border: 0;
+  width: 380px;
+  margin: 0;
+  padding: 10px;
+  margin-top: 5px;
+  cursor: pointer;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica;
+  font-weight: 100;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+
+.modpack-location:focus-visible {
+  outline: none;
+}
+
+#closeSettingsWindow {
+  float: right;
+  border-radius: 50%;
+  height: auto;
+  padding: 5px;
+  padding-bottom: 2px;
+}
+
+#settings-button {
+  padding: 5px;
+  display: inline-flex;
+  align-items: center;
+} 
+
+#settings-button svg {
+  fill: white;
+  width: 15px;
+  height: 15px;
+  stroke-width: 1px;
+  stroke: white;
+  margin-right: 5px;
+}
+
+svg {
+  width: 20px;
+  height: 20px;
+}
+
+#minimizeWindow:hover, #chooseModpack:hover, #modpackMods:hover, #settings-button:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+#closeWindow:hover, #closeSettingsWindow:hover {
+  background-color: rgb(232, 119, 111);
+}
+
+section {
+  padding: 1em;
+}
+
+#findModpack, #downloadButton {
+  text-align: center;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 2em;
+}
+
+label > svg {
+  width: 25px;
+  height: 25px;
+  margin-top: 2px;
+}
+
+#chooseModpack, #modpackMods {
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 0.1em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  user-select: none;
+}
+
+#modpackOverview, #downloadButton, #loading {
+  display: none;
+}
+
+.modpackInfo {
+  height: 128px;
+}
+
+.modpackInfo > h1 {
+  margin-bottom: 3px;
+  padding: 0;
+  margin-left: 5px;
+  font-size: 1rem;
+  margin-top: -2px;
+}
+
+p {
+  margin: 0;
+  padding: 5px;
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.8em;
+  margin-left: 2px;
+}
+
+p > span {
+  font-weight: 100;
+  word-break: break-word;
+}
+
+#modpackImage {
+  width: 128px;
+  height: 128px;
+  border-radius: 3px;
+}
+
+#modImage {
+  width: 64px;
+  height: 64px;
+  border-radius: 3px;
+}
+
+#loading {
+  text-align: center;
+}
+
+.dot-bricks {
+  position: relative;
+  top: 8px;
+  left: -9999px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #fff;
+  box-shadow: 9991px -16px 0 0 #fff, 9991px 0 0 0 #fff, 10007px 0 0 0 #fff;
+  animation: dotBricks 2s infinite ease;
+  justify-self: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+@keyframes dotBricks {
+  0% {
+    box-shadow: 9991px -16px 0 0 #fff, 9991px 0 0 0 #fff, 10007px 0 0 0 #fff;
+  }
+  8.333% {
+    box-shadow: 10007px -16px 0 0 #fff, 9991px 0 0 0 #fff, 10007px 0 0 0 #fff;
+  }
+  16.667% {
+    box-shadow: 10007px -16px 0 0 #fff, 9991px -16px 0 0 #fff, 10007px 0 0 0 #fff;
+  }
+  25% {
+    box-shadow: 10007px -16px 0 0 #fff, 9991px -16px 0 0 #fff, 9991px 0 0 0 #fff;
+  }
+  33.333% {
+    box-shadow: 10007px 0 0 0 #fff, 9991px -16px 0 0 #fff, 9991px 0 0 0 #fff;
+  }
+  41.667% {
+    box-shadow: 10007px 0 0 0 #fff, 10007px -16px 0 0 #fff, 9991px 0 0 0 #fff;
+  }
+  50% {
+    box-shadow: 10007px 0 0 0 #fff, 10007px -16px 0 0 #fff, 9991px -16px 0 0 #fff;
+  }
+  58.333% {
+    box-shadow: 9991px 0 0 0 #fff, 10007px -16px 0 0 #fff, 9991px -16px 0 0 #fff;
+  }
+  66.666% {
+    box-shadow: 9991px 0 0 0 #fff, 10007px 0 0 0 #fff, 9991px -16px 0 0 #fff;
+  }
+  75% {
+    box-shadow: 9991px 0 0 0 #fff, 10007px 0 0 0 #fff, 10007px -16px 0 0 #fff;
+  }
+  83.333% {
+    box-shadow: 9991px -16px 0 0 #fff, 10007px 0 0 0 #fff, 10007px -16px 0 0 #fff;
+  }
+  91.667% {
+    box-shadow: 9991px -16px 0 0 #fff, 9991px 0 0 0 #fff, 10007px -16px 0 0 #fff;
+  }
+  100% {
+    box-shadow: 9991px -16px 0 0 #fff, 9991px 0 0 0 #fff, 10007px 0 0 0 #fff;
+  }
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  overflow-y: scroll;
+  width: 100%;
+  height: 250px;
+}
+
+li {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.modInfo > h1 {
+  font-size: 0.7rem;
+  text-align: left;
+  margin-top: -4px;
+  margin-bottom: 0;
+  padding: 2px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 44ch;
+}
+
+.modInfo > p {
+  padding: 2px;
+  font-size: 0.6em;
+  text-overflow: ellipsis;
+  max-width: 50ch;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#modStatus {
+  font-weight: 100;
+  font-size: 0.6em;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-end;
+  display: inline-flex;
+}
+
+#modStatus svg {
+  margin-right: 2px;
+}
+
+#modsOverview {
+  display: none;
+}
+
+.modsOverview-navigation {
+  background-color: rgb(43, 44, 46);
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+#modsStatus {
+  font-weight: 100;
+}
+
+#modsStatus span {
+  font-weight: 500;
+}
